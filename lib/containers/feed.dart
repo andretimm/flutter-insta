@@ -6,6 +6,14 @@ class Feed extends StatefulWidget {
 }
 
 class _FeedState extends State<Feed> {
+  bool _like = false;
+
+  void like() {
+    setState(() {
+      _like = !_like;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,8 +71,9 @@ class _FeedState extends State<Feed> {
               Row(
                 children: <Widget>[
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.favorite_border),
+                    onPressed: like,
+                    icon: Icon(_like ? Icons.favorite : Icons.favorite_border),
+                    color: _like ? Colors.red : Colors.black87,
                   ),
                   IconButton(
                     onPressed: () {},
