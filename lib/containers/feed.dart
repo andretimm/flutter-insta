@@ -61,7 +61,7 @@ class _FeedState extends State<Feed> {
               image: DecorationImage(
                 fit: BoxFit.contain,
                 image: NetworkImage(
-                    "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"),
+                    "https://picsum.photos/250"),
               ),
             ),
           ),
