@@ -60,8 +60,7 @@ class _FeedState extends State<Feed> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.contain,
-                image: NetworkImage(
-                    "https://picsum.photos/250"),
+                image: NetworkImage("https://picsum.photos/250"),
               ),
             ),
           ),
@@ -71,6 +70,8 @@ class _FeedState extends State<Feed> {
               Row(
                 children: <Widget>[
                   IconButton(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onPressed: like,
                     icon: Icon(_like ? Icons.favorite : Icons.favorite_border),
                     color: _like ? Colors.red : Colors.black87,

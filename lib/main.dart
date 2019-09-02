@@ -10,6 +10,7 @@ class InstaFlutter extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Insta Fluuter',
+      theme: ThemeData(primarySwatch: Colors.grey),
       home: Home(),
     );
   }

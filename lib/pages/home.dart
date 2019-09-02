@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_insta/containers/feed.dart';
+import 'package:flutter_insta/pages/profile.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,6 +9,52 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _cIndex = 0;
+
+  List<Widget> _widgetOptions = <Widget>[
+    Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.camera_alt),
+          color: Colors.black,
+          onPressed: () => {},
+        ),
+        title: IconButton(
+          icon: Image.asset('assets/instagram.png'),
+          iconSize: 90.0,
+          tooltip: 'Volte ao inicio',
+          onPressed: () => {},
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.live_tv),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.send),
+          ),
+        ],
+        actionsIconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("Stories"),
+            Feed(),
+            Feed(),
+            Feed(),
+            Feed(),
+          ],
+        ),
+      ),
+    ),
+    Profile(),
+  ];
 
   void _incrementTab(index) {
     setState(() {
@@ -18,47 +65,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            icon: Icon(Icons.camera_alt),
-            color: Colors.black,
-            onPressed: () => {},
-          ),
-          title: IconButton(
-            icon: Image.asset('assets/instagram.png'),
-            iconSize: 90.0,
-            tooltip: 'Volte ao inicio',
-            onPressed: () => {},
-          ),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.live_tv),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.send),
-            ),
-          ],
-          actionsIconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-        ),
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("Stories"),
-              Feed(),
-              Feed(),
-              Feed(),
-              Feed(),
-            ],
-          ),
-        ),
+        body: _widgetOptions.elementAt(_cIndex),
         bottomNavigationBar: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
