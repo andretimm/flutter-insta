@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_insta/containers/feed.dart';
+import 'package:flutter_insta/pages/friendFeed.dart';
+import 'package:flutter_insta/pages/newPhotoGrid.dart';
 import 'package:flutter_insta/pages/profile.dart';
+import 'package:flutter_insta/pages/search.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -53,6 +56,9 @@ class _HomeState extends State<Home> {
         ),
       ),
     ),
+    Search(),
+    NewPhotoGrid(),
+    FriendFeed(),
     Profile(),
   ];
 
